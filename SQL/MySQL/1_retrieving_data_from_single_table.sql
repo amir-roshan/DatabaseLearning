@@ -13,6 +13,27 @@ ORDER BY first_name;
 
 -- The SELECT clause
 -- The column order matters => first name first
-SELECT first_name, last_name, point
-FROM customers
+-- AS is used to rename a column or table with an alias
+SELECT 
+	first_name, 
+	last_name, 
+    points,
+	(points + 10) * 100 AS 'discount factor' 
+FROM customers;
 
+-- DISTINCT is used to retrieve the unique data.
+SELECT DISTINCT state FROM customer;
+
+-- The WHERE Clause
+-- != is the same as <>
+SELECT * FROM customers WHERE points > 3000;
+SELECT * FROM customers WHERE state <> 'VA';
+SELECT * FROM customers WHERE birth_date > '1990-01-01';
+
+-- The AND, OR and NOT Operators
+SELECT * FROM Customers WHERE 
+	birth_date > '1990-01-01' OR 
+	(points > 100 AND state = 'VA');
+    
+SELECT * FROM Customers WHERE 
+	birth_date > '1990-01-01' OR NOT (points < 1000)
