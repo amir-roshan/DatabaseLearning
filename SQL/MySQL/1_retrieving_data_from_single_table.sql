@@ -36,4 +36,11 @@ SELECT * FROM Customers WHERE
 	(points > 100 AND state = 'VA');
     
 SELECT * FROM Customers WHERE 
-	birth_date > '1990-01-01' OR NOT (points < 1000)
+	birth_date > '1990-01-01' OR NOT (points < 1000);
+    
+-- The IN Operator
+-- We can use the in operator instead of the multiple or operators 
+SELECT * FROM customers WHERE state NOT IN('VA', 'FL', 'GA');
+
+-- The BETWEEN Operator
+SELECT * FROM customers WHERE points BETWEEN 1000 AND 3500;
