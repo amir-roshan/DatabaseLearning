@@ -24,3 +24,9 @@ SELECT * FROM products WHERE quantity_in_stock IN (49, 38, 72);
 -- Rturn customer born 
 -- 		between 1/1/1990 and 1/1/2000
 SELECT * FROM customers WHERE birth_date BETWEEN '1990-01-01' AND '2000-01-01';
+
+-- Get the customers whose 
+-- 		addressess contain TRAIL or AVENUE 
+-- 		phone numbers end with 9 
+SELECT * FROM customers WHERE (address LIKE '%trail%' OR  address LIKE '%avenue%') AND phone LIKE "%9";
+SELECT * FROM customers;

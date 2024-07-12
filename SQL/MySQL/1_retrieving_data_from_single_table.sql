@@ -44,3 +44,22 @@ SELECT * FROM customers WHERE state NOT IN('VA', 'FL', 'GA');
 
 -- The BETWEEN Operator
 SELECT * FROM customers WHERE points BETWEEN 1000 AND 3500;
+
+-- The LIKE operator
+-- the last name of all the customers starts with b
+-- and there can be any number of characters after b
+-- it does not matter if b is upper case or lower case
+SELECT * FROM customers WHERE last_name LIKE 'b%';
+
+-- b is in somewhere in the midde or the beginning or at the end
+SELECT * FROM customers WHERE last_name LIKE '%b%';
+
+-- ends with y
+SELECT * FROM customers WHERE last_name LIKE '%y';
+
+-- the lastname should be 5 chars and the last one should be y
+SELECT * FROM customers WHERE last_name LIKE '____y'
+
+-- % any number of characters 
+-- _ single number of character
+-- LIKE is an older operator
