@@ -28,7 +28,8 @@ VALUES
 CREATE TABLE Province (
 	ProvinceID INT NOT NULL,
 	ProvinceName VARCHAR(50) NOT NULL UNIQUE,
-	ProvinceCode VARCHAR(2) NOT NULL UNIQUE
+	ProvinceCode VARCHAR(2) NOT NULL UNIQUE,
+	CONSTRAINT PK_Province PRIMARY KEY (ProvinceID),
 )
 
 INSERT INTO Province (ProvinceID, ProvinceName, ProvinceCode) 
@@ -57,7 +58,7 @@ CREATE TABLE Address (
 	CustomerID INT NOT NULL,
 	ProvinceID INT NOT NULL,
     CONSTRAINT PK_Address PRIMARY KEY (AddressID),
-    CONSTRAINT FK_Address_Customer FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+    CONSTRAINT FK_Address_Customer FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
 	CONSTRAINT FK_Address_Province FOREIGN KEY (ProvinceID) REFERENCES Province(ProvinceID)
 );
 
