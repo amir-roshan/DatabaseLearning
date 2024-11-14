@@ -1,0 +1,11 @@
+# Ignore Windows shortcuts
+*.lnk
+
+# Ignore macOS alias shortcuts
+*.alias
+
+# Ignore symbolic link files (Linux/Unix)
+*.desktop
+
+# Ignore custom shortcuts or symlinks (if applicable)
+*.symlink

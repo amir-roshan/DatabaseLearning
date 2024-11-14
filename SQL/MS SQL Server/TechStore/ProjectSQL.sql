@@ -53,7 +53,6 @@ CREATE TABLE Address (
     AddressID INT NOT NULL,
     Street VARCHAR(100),
     City VARCHAR(50),
-    province VARCHAR(50),
     PostalCode VARCHAR(20),
 	CustomerID INT NOT NULL,
 	ProvinceID INT NOT NULL,
